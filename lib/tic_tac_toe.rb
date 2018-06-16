@@ -86,11 +86,7 @@ class TicTacToe
   end
 
   def full?
-    if @board.detect {|element| element == " "}
-      false
-    else
-      true
-    end
+    @board.detect {|element| element == " "} ? false : true
   end
 
   def draw?
