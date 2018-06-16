@@ -1,8 +1,8 @@
 class TicTacToe
   def initialize
-    @board = [" "," "," "," "," "," "," "," "," "]
-  end 
-  
+    @board = Array.new(9," ")#[" "," "," "," "," "," "," "," "," "]
+  end
+
   WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
@@ -51,19 +51,19 @@ class TicTacToe
   end
 
   def turn_count
-    counter = 0 
+    counter = 0
       @board.each do |player|
         if player == "X" || player == "O"
-          counter += 1 
+          counter += 1
         end
     end
     counter
   end
-  
+
   def current_player
     if turn_count .even?
       "X"
-    else  
+    else
       "O"
     end
   end
@@ -93,7 +93,7 @@ class TicTacToe
     if @board.detect {|element| element == " "}
       false
     else
-      true 
+      true
     end
   end
 
@@ -101,15 +101,15 @@ class TicTacToe
     if !won? && full?
       true
     else
-      false 
-    end   
+      false
+    end
   end
 
   def over?
     if won? || draw? || full?
-      true 
+      true
     else
-     false 
+     false
     end
   end
 
